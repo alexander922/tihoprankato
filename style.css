@@ -1,0 +1,53 @@
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#prank {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    animation: cambioTema 0.2s infinite alternate;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    margin: 0;
+
+    animation: shake 0.06s infinite;
+}
+
+p {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+}
+
+@keyframes cambioTema {
+    0% {
+        background: #050505;
+        color: white;
+    }
+
+    100% {
+        background: white;
+        color: black;
+    }
+}
+
+@keyframes shake {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    25%  { transform: translate(5px, -4px) rotate(1deg); }
+    50%  { transform: translate(-5px, 4px) rotate(-1deg); }
+    75%  { transform: translate(4px, 4px) rotate(1deg); }
+    100% { transform: translate(-4px, -4px) rotate(-1deg); }
+}
