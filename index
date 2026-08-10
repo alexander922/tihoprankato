@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prank</title>
+
+<style>
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#prank {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    animation: flash 0.2s infinite alternate;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    margin: 0;
+    animation: shake 0.06s infinite;
+}
+
+p {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+}
+
+@keyframes flash {
+    0% {
+        background: #050505;
+        color: white;
+    }
+
+    100% {
+        background: white;
+        color: black;
+    }
+}
+
+@keyframes shake {
+    0%   { transform: translate(0,0) rotate(0deg); }
+    25%  { transform: translate(4px,-3px) rotate(1deg); }
+    50%  { transform: translate(-4px,3px) rotate(-1deg); }
+    75%  { transform: translate(3px,3px) rotate(1deg); }
+    100% { transform: translate(-3px,-3px) rotate(-1deg); }
+}
+</style>
+</head>
+
+<body>
+
+<div id="prank">
+    <h1>Ti ho prankato 😂</h1>
+    <p>Firmato Andrea</p>
+</div>
+
+<script>
+function vibra() {
+    if (navigator.vibrate) {
+        navigator.vibrate([200, 50, 200, 50, 200]);
+    }
+}
+
+/* prova a far partire la vibrazione appena apre */
+vibra();
+
+/* continua a vibrare */
+setInterval(vibra, 700);
+</script>
+
+</body>
+</html>
